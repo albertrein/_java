@@ -1,3 +1,3 @@
 # JAVA
 
-Java education repositórie.
+Java education repository.
