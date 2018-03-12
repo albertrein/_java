@@ -1,5 +1,3 @@
-package pooecerc11;
-
 import java.util.Scanner;
 
 class Salario{
@@ -22,7 +20,7 @@ class Salario{
 
     void aumentaSalario(double porcentagem){
       double novoSalario = ((getSalario() * porcentagem)/100);
-      novoSalario += getSalario;
+      novoSalario += getSalario();
       setSalario(novoSalario);
     }
 
@@ -30,7 +28,7 @@ class Salario{
 
 class PooExerc11{
     public static void main(String[] args){
-      Scanner input = new Scanner();
+      Scanner input = new Scanner(System.in);
       Salario obj = new Salario();
 
       System.out.println("Digite o nome: ");
@@ -46,6 +44,7 @@ class PooExerc11{
       double percentual = input.nextDouble();
 
       obj.aumentaSalario(percentual);
+      System.out.println("Novo Salario: " + obj.getSalario());
 
     }
 }
