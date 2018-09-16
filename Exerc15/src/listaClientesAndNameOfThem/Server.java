@@ -34,8 +34,8 @@ public class Server extends Thread {
                                         return;
                                     }
 
+                                    contador++;
                                 }
-                                contador++;
                                     meuShell(currentThread(),getLinha);
 
                                 //Interrupt aqui para fechar a thread após comando de sair
@@ -72,7 +72,7 @@ public class Server extends Thread {
             }
             defineThread.setName(nick);//DEfine o nick da Thread
             clients.put(nick,sock); //Adicona um cliente
-            // Notifica asd todos os clientes
+            enviaNotificacao("Entrar",defineThread.getName()); // Notifica asd todos os clientes
             //Imprime as ultimas mensagens
             return 1;
         }
@@ -92,6 +92,31 @@ public class Server extends Thread {
                 break;
             }
         }
+        return 0;
+    }
+
+    public int enviaNotificacao(String tipoNotific, String threadName){
+        String finalMSG;
+        if(tipoNotific.equals("Entrar")){
+            finalMSG = "ENTROU "+threadName;
+        }else if(tipoNotific.equals("Sair")){
+            finalMSG = "SAIU "+threadName;
+        }else{
+            finalMSG = "Erro "+threadName;
+        }
+
+        for(String i : clients.keySet()){
+            try{
+                Socket socketAtual = clients.get(i);
+                PrintWriter saida = new PrintWriter(socketAtual.getOutputStream());
+                saida.println(finalMSG);
+                saida.flush();
+            }catch (IOException e){
+                System.out.println("Err. Enviar Mensagens");
+                break;
+            }
+        }
+
         return 0;
     }
 
