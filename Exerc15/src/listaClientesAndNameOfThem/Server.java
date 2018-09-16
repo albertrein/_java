@@ -27,7 +27,6 @@ public class Server extends Thread {
 
                             while((getLinha = entradas.nextLine()) != null){
                                 if(contador == 0) {
-                                    System.out.println("UUps!!");
                                     if(novoCliente(socket, getLinha, currentThread()) == 0){
                                         entradas.close();
                                         socket.close();
@@ -36,9 +35,13 @@ public class Server extends Thread {
 
                                     contador++;
                                 }
-                                    meuShell(currentThread(),getLinha);
+                                meuShell(currentThread(),getLinha);
+//                                try{
+//                                    join();
+//                                }catch (InterruptedException e){
+//                                    System.out.println("CLiente fora ...");
+//                                }
 
-                                //Interrupt aqui para fechar a thread após comando de sair
                             }
 
                         }catch (IOException ee){
@@ -61,7 +64,7 @@ public class Server extends Thread {
 
     public int novoCliente(Socket sock, String linha, Thread defineThread){
         if(getComando(linha).equals("ENTRAR")){
-            if(clients.size() > 99)
+            if(clients.size() > 2)
                 return 0;
 
             String nick = linha.replace(getComando(linha)+" ","");
@@ -125,7 +128,18 @@ public class Server extends Thread {
             enviaMensagens(threadActual.getName(), linha);
         }
         if(getComando(linha).equals("SAIR")){
-            //Kickar usuário
+            kickarCliente(threadActual);
+        }
+    }
+
+    public void kickarCliente(Thread thread){
+        for(String i : clients.keySet()){
+            if(thread.getName().equals(i)){
+                Socket sock = clients.get(i);
+                clients.remove(i,sock);
+                thread.stop();
+                enviaNotificacao("Sair", thread.getName());
+            }
         }
     }
 
