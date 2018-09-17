@@ -17,7 +17,7 @@ public class Server extends Thread {
                 System.out.println("Iniciando um novo cliente ....");
                 Socket socket = server.accept();
 
-                new Thread() { // Capturar as entradas de cada uma das Threads
+               new Thread() { // Capturar as entradas de cada uma das Threads
                     @Override
                     public void run(){
                         try{
