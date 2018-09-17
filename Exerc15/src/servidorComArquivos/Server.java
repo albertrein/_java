@@ -163,11 +163,36 @@ public class Server extends Thread{
         new Thread(){
             @Override
             public void run(){
-                try{
-                    FileReader leitor = new FileReader("messageServer.txt");
+                File arq = new File("messageServer.txt");
+                Scanner leitor = null;
+                try {
+                    leitor = new Scanner(arq);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
 
-                }catch (FileNotFoundException e){
-                    System.out.println("Arquivo não encontrado");
+                int numeroLinhas = contadorLinhas(arq), posicao;
+                if(numeroLinhas >= 20){
+                    posicao = numeroLinhas - 20;
+                }else{
+                    posicao = 0;
+                }
+
+                while(leitor.hasNextLine()){
+
+                }
+
+            }
+
+            public int contadorLinhas(File file){
+                try {
+                    Scanner leitor = new Scanner(file);
+                    int contador = 0;
+                    for(leitor.hasNextLine() == leitor.hasNext()){
+                        contador++;
+                    }
+                    return contador;
+                } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
             }
