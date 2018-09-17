@@ -83,7 +83,7 @@ public class Server extends Thread{
         notificaTodos("ENTRAR",currentThread);
 
         /*IMPORTANTE REVER !!!!*/
-        //imprime ultimas 20 mensagens
+        sendLastMessages(socket);
 
         return 0;
 
@@ -178,10 +178,12 @@ public class Server extends Thread{
                     }
                     PrintWriter saida = new PrintWriter(sock.getOutputStream());
                     String linha;
-                    while(leitor.hasNextLine()){
+                    for(int i = 0; leitor.hasNextLine(); i++){
                         linha = leitor.nextLine();
-                        saida.println(linha);
-                        saida.flush();
+                        if(i >= posicao){
+                            saida.println(linha);
+                            saida.flush();
+                        }
                     }
 
                 } catch (FileNotFoundException e) {

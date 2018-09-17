@@ -15,7 +15,7 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servidorComArquivos/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
+            <state relative-caret-position="105">
               <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="e#93#94#0" expanded="true" />
@@ -28,8 +28,8 @@
       <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/servidorComArquivos/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47">
-              <caret line="183" column="38" selection-start-line="183" selection-start-column="38" selection-end-line="183" selection-end-column="38" />
+            <state relative-caret-position="600">
+              <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#451#2469#0" expanded="true" />
@@ -37,6 +37,15 @@
                 <element signature="e#5010#5439#0" expanded="true" />
                 <element signature="e#5438#5439#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/teste2_arquivos/teste_leitura_normal/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -116,18 +125,6 @@
               <item name="Exerc15" type="b2602c69:ProjectViewProjectNode" />
               <item name="Exerc15" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sendAndReceiveMessages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Exerc15" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Exerc15" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="servidorComArquivos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Exerc15" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Exerc15" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="teste2_arquivos" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -168,7 +165,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main (3)">
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration name="Cliente" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Threads.Cliente" />
       <module name="Exerc15" />
@@ -274,8 +271,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Cliente" />
@@ -654,17 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/servidorComArquivos/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#93#94#0" expanded="true" />
-            <element signature="e#129#130#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/listaClientesAndNameOfThem/Server.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-45">
@@ -686,10 +672,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/servidorComArquivos/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#93#94#0" expanded="true" />
+            <element signature="e#129#130#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/servidorComArquivos/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="183" column="38" selection-start-line="183" selection-start-column="38" selection-end-line="183" selection-end-column="38" />
+        <state relative-caret-position="600">
+          <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#451#2469#0" expanded="true" />
