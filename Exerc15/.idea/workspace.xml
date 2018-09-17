@@ -15,11 +15,11 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servidorComArquivos/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="75">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="e#93#94#0" expanded="true" />
-                <element signature="e#120#121#0" expanded="true" />
+                <element signature="e#129#130#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -28,16 +28,14 @@
       <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/servidorComArquivos/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="190" column="24" lean-forward="true" selection-start-line="190" selection-start-column="24" selection-end-line="190" selection-end-column="48" />
+            <state relative-caret-position="47">
+              <caret line="183" column="38" selection-start-line="183" selection-start-column="38" selection-end-line="183" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#451#2501#0" expanded="true" />
-                <element signature="e#2500#2501#0" expanded="true" />
-                <element signature="e#2885#2886#0" expanded="true" />
-                <element signature="e#2942#2943#0" expanded="true" />
-                <element signature="e#5073#5318#0" expanded="true" />
-                <element signature="e#5317#5318#0" expanded="true" />
+                <element signature="e#451#2469#0" expanded="true" />
+                <element signature="e#2468#2469#0" expanded="true" />
+                <element signature="e#5010#5439#0" expanded="true" />
+                <element signature="e#5438#5439#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -56,7 +54,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/teste1_manyClients/Main.java" />
-        <option value="$PROJECT_DIR$/src/teste2_arquivos/teste_leitura_normal/Main.java" />
         <option value="$PROJECT_DIR$/src/teste2_arquivos/leitura_escrita_arquivo/ReadAndWrite.java" />
         <option value="$PROJECT_DIR$/src/teste3_modelagem/Testando_modelagem.java" />
         <option value="$PROJECT_DIR$/src/teste3_modelagem/Servidor/Servidor.java" />
@@ -79,6 +76,7 @@
         <option value="$PROJECT_DIR$/src/Threads/interruptTest/Main.java" />
         <option value="$PROJECT_DIR$/src/servidorComArquivos/Main.java" />
         <option value="$PROJECT_DIR$/src/listaClientesAndNameOfThem/Server.java" />
+        <option value="$PROJECT_DIR$/src/teste2_arquivos/teste_leitura_normal/Main.java" />
         <option value="$PROJECT_DIR$/src/servidorComArquivos/Server.java" />
       </list>
     </option>
@@ -94,9 +92,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -127,10 +124,31 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="servidorComArquivos" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Exerc15" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Exerc15" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="teste2_arquivos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Exerc15" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Exerc15" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="teste2_arquivos" type="462c0819:PsiDirectoryNode" />
+              <item name="leitura_escrita_arquivo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Exerc15" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Exerc15" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="teste2_arquivos" type="462c0819:PsiDirectoryNode" />
+              <item name="teste_leitura_normal" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -150,7 +168,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
+  <component name="RunManager" selected="Application.Main (3)">
     <configuration name="Cliente" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Threads.Cliente" />
       <module name="Exerc15" />
@@ -184,6 +202,17 @@
         </pattern>
       </extension>
     </configuration>
+    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="teste2_arquivos.teste_leitura_normal.Main" />
+      <module name="Exerc15" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="teste2_arquivos.teste_leitura_normal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="listaClientesAndNameOfThem.Main" />
       <module name="Exerc15" />
@@ -191,17 +220,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="listaClientesAndNameOfThem.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
-    <configuration name="SendAndReceiveMessages" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sendAndReceiveMessages.SendAndReceiveMessages" />
-      <module name="Exerc15" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sendAndReceiveMessages.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -248,19 +266,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Application.SendAndReceiveMessages" />
       <item itemvalue="Application.Cliente" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Main (2)" />
       <item itemvalue="Application.Main (1)" />
+      <item itemvalue="Application.Main (3)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Cliente" />
-        <item itemvalue="Application.SendAndReceiveMessages" />
       </list>
     </recent_temporary>
   </component>
@@ -279,6 +297,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="25" width="1399" height="875" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -288,18 +307,18 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31633988" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31633988" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2494639" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494639" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -311,14 +330,14 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31633988" />
       <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494639" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31633988" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -328,7 +347,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32941177" />
@@ -486,13 +505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/teste2_arquivos/teste_leitura_normal/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="59" lean-forward="true" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/teste3_modelagem/t1/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/teste3_modelagem/Testando_modelagem.java" />
     <entry file="file://$PROJECT_DIR$/src/teste3_modelagem/Servidor/Main.java" />
@@ -635,13 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/teste2_arquivos/leitura_escrita_arquivo/ReadAndWrite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sendAndReceiveMessages/Server.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -651,11 +656,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/servidorComArquivos/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="75">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="e#93#94#0" expanded="true" />
-            <element signature="e#120#121#0" expanded="true" />
+            <element signature="e#129#130#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -667,18 +672,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/teste2_arquivos/leitura_escrita_arquivo/ReadAndWrite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/teste2_arquivos/teste_leitura_normal/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/servidorComArquivos/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="190" column="24" lean-forward="true" selection-start-line="190" selection-start-column="24" selection-end-line="190" selection-end-column="48" />
+        <state relative-caret-position="47">
+          <caret line="183" column="38" selection-start-line="183" selection-start-column="38" selection-end-line="183" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#451#2501#0" expanded="true" />
-            <element signature="e#2500#2501#0" expanded="true" />
-            <element signature="e#2885#2886#0" expanded="true" />
-            <element signature="e#2942#2943#0" expanded="true" />
-            <element signature="e#5073#5318#0" expanded="true" />
-            <element signature="e#5317#5318#0" expanded="true" />
+            <element signature="e#451#2469#0" expanded="true" />
+            <element signature="e#2468#2469#0" expanded="true" />
+            <element signature="e#5010#5439#0" expanded="true" />
+            <element signature="e#5438#5439#0" expanded="true" />
           </folding>
         </state>
       </provider>

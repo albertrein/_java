@@ -14,14 +14,16 @@ public class Main {
             for(contador = 0; linha.hasNextLine(); contador++)
                 linha.nextLine();
 
-            Scanner linha2 = new Scanner(arq);
+            System.out.println(">>>"+contador);
 
-            for(int i = 0; linha2.hasNextLine(); i++){
-                String line = linha2.nextLine();
-                if(i >= 15){
-                    System.out.println(line);
-                }
-            }
+//            Scanner linha2 = new Scanner(arq);
+//
+//            for(int i = 0; linha2.hasNextLine(); i++){
+//                String line = linha2.nextLine();
+//                if(i >= 15){
+//                    System.out.println(line);
+//                }
+//            }
 
         }catch (FileNotFoundException e){
                 e.printStackTrace();

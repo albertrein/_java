@@ -159,7 +159,7 @@ public class Server extends Thread{
         }.start();
     }
 
-    public void returnLastMessages(Socket sock){ //REtorna mensagem para cliente especifico
+    public void sendLastMessages(Socket sock){ //REtorna mensagem para cliente especifico
         new Thread(){
             @Override
             public void run(){
@@ -167,18 +167,27 @@ public class Server extends Thread{
                 Scanner leitor = null;
                 try {
                     leitor = new Scanner(arq);
+
+                    int numeroLinhas = contadorLinhas(arq);
+                    int posicao;
+
+                    if(numeroLinhas >= 20){
+                        posicao = numeroLinhas - 20;
+                    }else{
+                        posicao = 0;
+                    }
+                    PrintWriter saida = new PrintWriter(sock.getOutputStream());
+                    String linha;
+                    while(leitor.hasNextLine()){
+                        linha = leitor.nextLine();
+                        saida.println(linha);
+                        saida.flush();
+                    }
+
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
-                }
-
-                int numeroLinhas = contadorLinhas(arq), posicao;
-                if(numeroLinhas >= 20){
-                    posicao = numeroLinhas - 20;
-                }else{
-                    posicao = 0;
-                }
-
-                while(leitor.hasNextLine()){
+                    return;
+                }catch (IOException e){
 
                 }
 
@@ -188,12 +197,12 @@ public class Server extends Thread{
                 try {
                     Scanner leitor = new Scanner(file);
                     int contador = 0;
-                    for(leitor.hasNextLine() == leitor.hasNext()){
-                        contador++;
-                    }
+                    for(; leitor.hasNextLine(); contador++)
+                        leitor.nextLine();
                     return contador;
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
+                    return 0;
                 }
             }
         }.start();
