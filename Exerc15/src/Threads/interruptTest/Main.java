@@ -1,30 +1,42 @@
 package Threads.interruptTest;
 
-import java.sql.SQLOutput;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Iniciando Main ...");
-        Thread t = new Thread() {
+        Scanner in = new Scanner(System.in);
+        Thread t = new Thread(){ //Thread entrada
             @Override
-            public void run() {
-                System.out.println("Iniciando Thread ...");
-//                try{
-//                    yield();
-//                }
-//               return;
-
-
+            public void run(){
+                try{
+                    while(true){
+                        System.out.println("Digite um valor: ");
+                        String msg = in.nextLine();
+                        join();
+                    }
+                }catch (InterruptedException e){
+                    System.out.println("OUT");
+                    return;
+                }
             }
         };
 
         t.start();
-        try {
-            Thread.currentThread().sleep(4000);
-            t.interrupt();
-            System.out.println(t.getName());
-        } catch (InterruptedException e) {
-        }
+
+        new Thread(){ //Thread entrada
+            @Override
+            public void run(){
+                try{
+                    currentThread().sleep(7000);
+                    t.join();
+                    System.out.println("out-2");
+                    return;
+                }catch (InterruptedException e){
+
+                }
+            }
+        }.start();
 
 
     }
