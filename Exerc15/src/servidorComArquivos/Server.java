@@ -31,7 +31,7 @@ public class Server extends Thread{
                                     if(comando.equals("ENTRAR") && novoCliente(socket, currentThread(), getMensagem(chatEntrada,comando)) != 1){
                                         inicio = false; //Não é mais inicio
                                     }else{
-                                        System.out.println("chata");
+                                        System.out.println("#Fora");
                                         entrada.close();
                                         socket.close();
                                         return;
@@ -100,7 +100,7 @@ public class Server extends Thread{
                 return 1;
             }
         }
-        saveMessage(msg);
+        saveMessage(msg, currThread);
         return 0;
     }
 
@@ -124,7 +124,7 @@ public class Server extends Thread{
                 mensagem = "ENTROU "+currThread.getName();
                 break;
             case "SAIR":
-                mensagem = currThread.getName()+" SAIU do grupo";
+                mensagem = "MSG "+currThread.getName()+" saiu do grupo";
                 break;
              default:
                  mensagem = "Err. "+currThread.getName();
@@ -143,13 +143,13 @@ public class Server extends Thread{
         }
     }
 
-    public void saveMessage(String msgSave){
+    public void saveMessage(String msgSave, Thread currThread){
         new Thread(){
             @Override
             public void run(){
                 try{
                     FileWriter save = new FileWriter("messageServer.txt",true);
-                    save.write(msgSave);
+                    save.write("MSG "+currThread.getName()+" "+msgSave+"\n");
                     save.flush();
                 }catch(IOException e){
                     System.out.println("Err. Salvar mensagem.");
@@ -171,8 +171,8 @@ public class Server extends Thread{
                     int numeroLinhas = contadorLinhas(arq);
                     int posicao;
 
-                    if(numeroLinhas >= 20){
-                        posicao = numeroLinhas - 20;
+                    if(numeroLinhas >= 7){
+                        posicao = numeroLinhas - 7;
                     }else{
                         posicao = 0;
                     }
@@ -189,8 +189,8 @@ public class Server extends Thread{
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                     return;
-                }catch (IOException e){
-
+                }catch (IOException ee){
+                    ee.printStackTrace();
                 }
 
             }

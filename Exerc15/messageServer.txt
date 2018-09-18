@@ -1,1 +1,23 @@
-ola pessoal
+MSG albe hello
+MSG gui olá
+MSG albe bye
+MSG gui byee
+MSG albe hello
+MSG gui ola
+MSG gui t1
+MSG gui T2
+MSG gui T3
+MSG gui T4
+MSG gui T5
+MSG gui T6
+MSG gui T7
+MSG gui T8
+MSG gui T9
+MSG gui t10
+MSG albe ola
+MSG ll hello
+MSG qwe ola
+MSG ll ola qwe
+MSG alberto hello guy
+MSG teste teste2
+MSG ji asd
