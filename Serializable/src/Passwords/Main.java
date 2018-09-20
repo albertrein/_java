@@ -25,7 +25,7 @@ public class Main {
                 }
             }else if(opcao.equals("OUT")){
                 break;
-            }inse
+            }
         }
 
         new Thread(){
