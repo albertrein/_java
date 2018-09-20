@@ -63,7 +63,7 @@ public class Server extends Thread{
             }
 
         }catch (IOException ioex){
-            System.out.println("Err. Server");
+            System.out.println("Err. Não foi possível criar o servidor.");
         }
     } //Fim da run
 
@@ -137,7 +137,7 @@ public class Server extends Thread{
                 notificacao.println(mensagem);
                 notificacao.flush();
             }catch(IOException e){
-                System.out.println("Err. Enviar mensagens");
+                System.out.println("Err. Ao enviar mensagens");
                 return;
             }
         }

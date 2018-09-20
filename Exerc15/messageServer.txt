@@ -21,3 +21,5 @@ MSG ll ola qwe
 MSG alberto hello guy
 MSG teste teste2
 MSG ji asd
+MSG gui gui
+MSG albe ola
