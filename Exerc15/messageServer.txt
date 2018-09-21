@@ -23,3 +23,7 @@ MSG teste teste2
 MSG ji asd
 MSG gui gui
 MSG albe ola
+MSG gui ola
+MSG alberto ola pessoal
+MSG gui ola
+MSG aler este
