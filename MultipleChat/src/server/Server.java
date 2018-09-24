@@ -4,6 +4,7 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashMap;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -14,9 +15,9 @@ public class Server extends Thread {
     public void run(){
         try{
             ServerSocket server = new ServerSocket(5551);
+            System.out.println("Starting Server ...");
 
             while(true){
-                System.out.println("Iniciando novo Cliente");
                 Socket socket = server.accept();
 
                 new Thread(){
@@ -60,6 +61,10 @@ public class Server extends Thread {
                         }catch (IOException ioexx){
                             System.out.println("Err. Mensageiro");
                             ioexx.printStackTrace();
+                        }catch (NoSuchElementException e){
+                            System.out.println("num vi");
+                        }finally {
+                            System.out.println("CLiente saiu");
                         }
                     }
                 }.start();
@@ -75,7 +80,7 @@ public class Server extends Thread {
     }
 
     public int novoCliente(Socket socket, Thread currentThread, String nick){
-        if(clientes.size() > 99)
+        if(clientes.size() > 2)
             return 1;
         for(String i : clientes.keySet()){
             if(i.equals(nick))
