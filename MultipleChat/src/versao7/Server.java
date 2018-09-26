@@ -25,16 +25,20 @@ public class Server extends Thread {
                             while((entrada = in.nextLine())!=null){
                                 if(isInicio){
                                      if(getComand(entrada).equals("ENTRAR")){
-                                         if(!insertNewClient(newCliente, currentThread(), getMsg(entrada)))
-                                             //kickar usuario
-                                         isInicio = false;
+                                         if(!insertNewClient(newCliente, currentThread(), getMsg(entrada))) {
+                                             in.close();
+                                             newCliente.close();
+                                         }
                                      }else{
-                                         //kickar
+                                         in.close();
+                                         newCliente.close();
                                      }
-                                }else if(getComand(entrada).equals("MSG")){
+                                    isInicio = false;
+                                }
+                                if(getComand(entrada).equals("MSG")){
                                     newMessage(currentThread(),getMsg(entrada));
                                 }else if(getComand(entrada).equals("SAIR")){
-                                    //removerCLiente
+                                    kickUser(currentThread());
                                 }else{
                                     System.out.println("Mensagem não reconhecida");
                                 }
@@ -91,8 +95,8 @@ public class Server extends Thread {
         }
         currThread.setName(nick); // SETA O NOME DA THREAD COM O NICK DIGITADO
         clientes.put(nick, currSocket); //ADICIONA UM NOVO SOCKET
-        sendMessagesFromAll("ENTROU "+currThread); //Envia mensagem para todos os clientes
         getLastMessages(currSocket); //Pega a ultimas mensagens
+        sendMessagesFromAll("MSG "+currThread.getName()+" Entrou no grupo"); //Envia mensagem para todos os clientes
         return true;
     }
 
@@ -103,18 +107,27 @@ public class Server extends Thread {
             try{
                 enviaMsg = new PrintWriter(clientes.get(i).getOutputStream());
                 msg = "MSG "+currThread.getName()+" "+mensagem;
-                saveMessage(mensagem, currThread);
-            }catch (IOException e){
-                msg = "Err. Ao receber mensagem";
-            }finally {
                 enviaMsg.println(msg);
                 enviaMsg.flush();
+            }catch (IOException e){
+                msg = "Err. Ao receber mensagem";
             }
         }
+        saveMessage(mensagem, currThread);
         return true;
     }
 
-    public void kickOut(){
+    public boolean kickUser(Thread currThread){
+        try{
+            Socket saida = clientes.get(currThread.getName());
+            saida.close();
+            clientes.remove(currThread.getName(),saida);
+            sendMessagesFromAll("MSG "+currThread.getName()+" saiu do grupo");
+        }catch (IOException e){
+            System.out.println("Err. Ao excluir funcionario.");
+            return false;
+        }
+        return true;
         //manda mensagem de sair para todos
         //manda mensagem do erro ou motivo para o especifico
     }
