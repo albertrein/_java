@@ -37,7 +37,7 @@ public class Cliente {
                             System.out.println(linha);
                         }
                     } catch (NoSuchElementException e) {
-                        System.out.println("Saindo do CHAT. " + e.getMessage());
+                        System.out.println("Saindo do CHAT.");
                         entradaSocket.close();
                         saidaSocket.close();
                         System.exit(0);

@@ -1,4 +1,4 @@
-package server;
+package versao6.server;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -14,7 +14,7 @@ public class Server extends Thread {
     @Override
     public void run(){
         try{
-            ServerSocket server = new ServerSocket(5551);
+            ServerSocket server = new ServerSocket(8976);
             System.out.println("Starting Server ...");
 
             while(true){
@@ -80,7 +80,7 @@ public class Server extends Thread {
     }
 
     public int novoCliente(Socket socket, Thread currentThread, String nick){
-        if(clientes.size() > 2)
+        if(clientes.size() > 99)
             return 1;
         for(String i : clientes.keySet()){
             if(i.equals(nick))

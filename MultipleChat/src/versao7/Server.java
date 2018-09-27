@@ -6,7 +6,8 @@ import java.util.*;
 
 public class Server extends Thread {
     private HashMap<String, Socket> clientes = new HashMap<>();
-    private final int getNumeroLinhasArq = 7;
+    private final int getNumeroLinhasArq = 20;
+    private final int numeroMaximoClientes = 1;
 
     @Override
     public void run(){
@@ -26,10 +27,12 @@ public class Server extends Thread {
                                 if(isInicio){
                                      if(getComand(entrada).equals("ENTRAR")){
                                          if(!insertNewClient(newCliente, currentThread(), getMsg(entrada))) {
+                                             sendErrorMessages(newCliente,"Você não pode se conectar. Saindo.");
                                              in.close();
                                              newCliente.close();
                                          }
                                      }else{
+                                         sendErrorMessages(newCliente,"Você não pode se conectar. Saindo.");
                                          in.close();
                                          newCliente.close();
                                      }
@@ -70,6 +73,20 @@ public class Server extends Thread {
         return completeMessage.replaceFirst(comando+" ","");
     }
 
+    public boolean sendErrorMessages(Socket cliente, String msg){
+        try{
+            PrintWriter saida = new PrintWriter(cliente.getOutputStream());
+            saida.println(msg);
+            saida.flush();
+        }catch (IOException e){
+            System.out.println("Err. Ao enviar mensagem de erro para o cliente:");
+            return false;
+        }catch (NullPointerException ee){
+            System.out.println("NUlPoint");
+        }
+        return true;
+    }
+
     public boolean sendMessagesFromAll(String message){
         for(String i : clientes.keySet()){
             try {
@@ -86,7 +103,7 @@ public class Server extends Thread {
 
 
     public boolean insertNewClient(Socket currSocket, Thread currThread, String nick){
-        if(this.clientes.size() > 99)
+        if(this.clientes.size() > numeroMaximoClientes)
             return false;
 
         for(String i : clientes.keySet()){

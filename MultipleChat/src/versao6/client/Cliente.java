@@ -1,7 +1,6 @@
-package client;
+package versao6.client;
 
 import java.io.IOException;
-import java.io.InterruptedIOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.NoSuchElementException;
