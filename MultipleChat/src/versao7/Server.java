@@ -8,12 +8,12 @@ import java.util.*;
 public class Server extends Thread {
     private HashMap<String, Socket> clientes = new HashMap<>();
     private final int getNumeroLinhasArq = 20;
-    private final int numeroMaximoClientes = 1;
+    private final int numeroMaximoClientes = 99;
 
     @Override
     public void run(){
         try{
-            ServerSocket server = new ServerSocket(7777);
+            ServerSocket server = new ServerSocket(8976);
             while(true){
                 Socket newCliente = server.accept();
 
