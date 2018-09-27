@@ -2,6 +2,7 @@ package versao7;
 
 import java.net.*;
 import java.io.*;
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class Server extends Thread {
@@ -28,12 +29,10 @@ public class Server extends Thread {
                                      if(getComand(entrada).equals("ENTRAR")){
                                          if(!insertNewClient(newCliente, currentThread(), getMsg(entrada))) {
                                              sendErrorMessages(newCliente,"Você não pode se conectar. Saindo.");
-                                             in.close();
                                              newCliente.close();
                                          }
                                      }else{
                                          sendErrorMessages(newCliente,"Você não pode se conectar. Saindo.");
-                                         in.close();
                                          newCliente.close();
                                      }
                                     isInicio = false;
@@ -46,11 +45,11 @@ public class Server extends Thread {
                                     System.out.println("Mensagem não reconhecida");
                                 }
                             }
-
                         }catch(IOException ioe){
                             System.out.println("Não foi possivel criar a entrada de dados");
                         }catch (NoSuchElementException e){
                             System.out.println(currentThread()+" saiu do grupo");
+                            kickUser(currentThread());
                         }
                     }
                 }.start();
@@ -143,6 +142,8 @@ public class Server extends Thread {
         }catch (IOException e){
             System.out.println("Err. Ao excluir funcionario.");
             return false;
+        }catch (NullPointerException ee){
+
         }
         return true;
         //manda mensagem de sair para todos
