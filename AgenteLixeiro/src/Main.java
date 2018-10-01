@@ -7,6 +7,9 @@ public class Main {
         return novaMatrizAmbiente;
     }
 
+
+
+
     public static void main(String[] args) {
         Ambiente[][] ambiente = new Ambiente[8][8];
         ambiente = geraAmbiente(ambiente);
