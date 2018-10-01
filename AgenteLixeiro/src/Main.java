@@ -4,7 +4,7 @@ public class Main {
     public static Ambiente[][] geraAmbiente(Ambiente[][] novaMatrizAmbiente){
         novaMatrizAmbiente[1][6] = new Lixeira("LS ");
         novaMatrizAmbiente[6][1] = new Lixeira("LO ");
-        
+
 
 
         return novaMatrizAmbiente;
