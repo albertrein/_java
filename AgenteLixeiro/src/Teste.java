@@ -4,7 +4,7 @@ public class Teste {
     public static void main(String[] args) {
         Process exet;
         try{
-            exet = Runtime.getRuntime().exec("git push ");
+            exet = Runtime.getRuntime().exec("git add .");
             exet.waitFor();
             Scanner entrada = new Scanner(exet.getInputStream());
 
