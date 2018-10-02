@@ -11,7 +11,10 @@ class Guikraken{
        		msg+= "_"+args[i];
        	}
 
-		new GuitKraken(msg).start();
+		//GuitKraken t0 = new GuitKraken("git add .").start();
+		//GuitKraken t1 = new GuitKraken(msg).start();
+		new GuitKraken("git push").start();
+
 
 	}
 }
