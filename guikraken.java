@@ -11,9 +11,21 @@ class Guikraken{
        		msg+= "_"+args[i];
        	}
 
-		//GuitKraken t0 = new GuitKraken("git add .").start();
-		//GuitKraken t1 = new GuitKraken(msg).start();
-		new GuitKraken("git push").start();
+		GuitKraken t0 = new GuitKraken("git add .");
+		GuitKraken t1 = new GuitKraken(msg);
+		GuitKraken t2 = new GuitKraken("git push");
+
+		try{
+			t0.start();
+			t0.join();
+
+			t1.start();
+			t1.join();
+
+			t2.start();
+		}catch (InterruptedException e){
+
+		}
 
 
 	}
@@ -47,8 +59,9 @@ class GuitKraken extends Thread{
                 System.out.println(line);
             }
 		}catch (Exception e){
-        	System.out.println("Err. Comando não foi executado.");
-        }       yield();
+        	System.out.println("");
+        }
+        yield();
 	}
 
 }
