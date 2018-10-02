@@ -27,6 +27,7 @@ class GuitKraken extends Thread{
 		System.out.println(">>"+this.comando);
 		executeComand();
 	}
+	
 
 	synchronized public void executeComand(){
 		try{
