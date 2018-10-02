@@ -1,10 +1,11 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Teste {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String x = in.nextLine();
-        x = "git commit -m \""+x+"\"";
+        x = "git commit -m '"+x+"'";
         //String x = " git status";
 
 
@@ -21,7 +22,7 @@ public class Teste {
             }
 
 
-        }catch (Exception e){
+        }catch (IOException){
 
         }
 
