@@ -8,7 +8,7 @@ class Guikraken{
 
 		// Scanner in = new Scanner(System.in);
 		// String msg = in.nextLine();
-		String msg = "git commit -m \'"+(String)args[0]+"\'";
+		String msg = "git commit -m \""+(String)args[0]+"\"";
 		new GuitKraken(msg).start();
 
 	}
