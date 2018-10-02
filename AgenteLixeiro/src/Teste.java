@@ -8,6 +8,7 @@ public class Teste {
         x = "git commit -m '"+x+"'";
         //String x = " git status";
 
+        System.out.println(args.length);
 
 
         Process exet;

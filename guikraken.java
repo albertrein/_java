@@ -5,10 +5,13 @@ class Guikraken{
 	public static void main(String args[]){
 		// if(args[0].equals("--help"))
 		// 	Help.help();
+       
+		String msg = "git commit -m \'";
+       	for(int i = 0; i < args.length; i++){
+       		msg+= "_"+args[i];
+       	}
+       	msg += "\'";
 
-		// Scanner in = new Scanner(System.in);
-		// String msg = in.nextLine();
-		String msg = "git commit -m \""+(String)args[0]+"\"";
 		new GuitKraken(msg).start();
 
 	}
