@@ -6,9 +6,9 @@ class Guikraken{
 		// if(args[0].equals("--help"))
 		// 	Help.help();
 
-		Scanner in = new Scanner(System.in);
-		String msg = in.nextLine();
-
+		// Scanner in = new Scanner(System.in);
+		// String msg = in.nextLine();
+		String msg = "git commit -m "+(String)args[0];
 		new GuitKraken(msg).start();
 
 	}
