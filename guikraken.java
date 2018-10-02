@@ -3,9 +3,14 @@ import java.util.Scanner;
 
 class Guikraken{
 	public static void main(String args[]){
-		if(args[0].equals("--help"))
-			Help.help();
-       
+		if(args.length > 0){
+			if(args[0].equals("--help")){
+				Help.help();			
+			}
+       	}else{
+       		return;
+       	}
+
 		String msg = "git commit -m ";
        	for(int i = 0; i < args.length; i++){
        		msg+= "_"+args[i];
