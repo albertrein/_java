@@ -46,12 +46,9 @@ class GuitKraken extends Thread{
             while((line = entrada.nextLine()) != null){
                 System.out.println(line);
             }
-		}catch (IOException e){
+		}catch (Exception e){
         	System.out.println("Err. Comando não foi executado.");
-        }catch (InterruptedException ee){
-        	ee.printStackTrace();
-        }
-        yield();
+        }       yield();
 	}
 
 }
