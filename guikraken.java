@@ -8,7 +8,7 @@ class Guikraken{
 
 		// Scanner in = new Scanner(System.in);
 		// String msg = in.nextLine();
-		String msg = "git commit -m "+(String)args[0];
+		String msg = "git commit -m \'"+(String)args[0]+"\'";
 		new GuitKraken(msg).start();
 
 	}
@@ -22,12 +22,13 @@ class GuitKraken extends Thread{
 		this.comando = command;
 	}
 
+
 	@Override
 	public void run(){
 		System.out.println(">>"+this.comando);
 		executeComand();
 	}
-	
+
 
 	synchronized public void executeComand(){
 		try{
