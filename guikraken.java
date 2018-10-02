@@ -6,11 +6,10 @@ class Guikraken{
 		// if(args[0].equals("--help"))
 		// 	Help.help();
        
-		String msg = "git commit -m \'";
+		String msg = "git commit -m ";
        	for(int i = 0; i < args.length; i++){
        		msg+= "_"+args[i];
        	}
-       	msg += "\'";
 
 		new GuitKraken(msg).start();
 
