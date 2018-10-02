@@ -8,7 +8,7 @@ class Guikraken{
        
 		String msg = "git commit -m \'";
        	for(int i = 0; i < args.length; i++){
-       		msg+= "_"+args[i];
+       		msg+= "\t"+args[i];
        	}
        	msg += "\'";
 
