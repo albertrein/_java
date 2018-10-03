@@ -13,8 +13,8 @@ public class TesteThread extends Thread {
     }
 
     public void showFrase() {
-        //synchronized (this){
+        synchronized (this){
             System.out.println(this.frase);
-       // }
+        }
     }
 }
