@@ -1,18 +1,33 @@
 import java.util.*;
 
 public class Main {
-    public static Ambiente[][] geraAmbiente(Ambiente[][] novaMatrizAmbiente){
-        novaMatrizAmbiente[1][6] = new Lixeira("LS ");
-        novaMatrizAmbiente[6][1] = new Lixeira("LO ");
-        return novaMatrizAmbiente;
+    private static final int tamanhoMatriz = 8;
+
+    public void geraLixos(Ambiente[][] matriz){
+        do{
+            int x = randomCoordenada(), y = randomCoordenada();
+            if(matriz[x][y] != null)
+                continue;
+
+            matriz[x][y] = new Lixo("O");
+        }while (true);
     }
 
 
+    public static void geraAmbiente(Ambiente[][] novaMatrizAmbiente){
+        novaMatrizAmbiente[1][6] = new Lixeira("LS ");
+        novaMatrizAmbiente[6][1] = new Lixeira("LO ");
+        geraLixos(novaMatrizAmbiente);
+    }
 
+    public static int randomCoordenada(){
+        Random rand = new Random();
+        return rand.nextInt(tamanhoMatriz-1);
+    }
 
     public static void main(String[] args) {
         Ambiente[][] ambiente = new Ambiente[8][8];
-        ambiente = geraAmbiente(ambiente);
+        geraAmbiente(ambiente);
 
 
         for (int i = 0; i < 8; i++) {
