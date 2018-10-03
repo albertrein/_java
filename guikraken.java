@@ -20,7 +20,14 @@ class Guikraken{
 		GuitKraken t1 = new GuitKraken(msg);
 		GuitKraken t2 = new GuitKraken("git push");
 
-		try{
+
+		t0.start();
+		
+		t1.start();
+		
+		t2.start();
+
+		/*try{
 			t0.start();
 			t0.join();
 
@@ -30,7 +37,7 @@ class Guikraken{
 			t2.start();
 		}catch (InterruptedException e){
 			e.printStackTrace();
-		}
+		}*/
 
 
 	}
@@ -53,20 +60,21 @@ class GuitKraken extends Thread{
 	}
 
 
-	synchronized public void executeComand(){
-		try{
-			this.execute = Runtime.getRuntime().exec(this.comando);
-			this.execute.waitFor();
-			Scanner entrada = new Scanner(this.execute.getInputStream());
+	public void executeComand(){
+		synchronized (this){
+			try{
+				this.execute = Runtime.getRuntime().exec(this.comando);
+				this.execute.waitFor();
+				Scanner entrada = new Scanner(this.execute.getInputStream());
 
-            String line;
-            while((line = entrada.nextLine()) != null){
-                System.out.println(line);
-            }
-		}catch (Exception e){
-        	System.out.println("");
-        }
-        yield();
+	            String line;
+	            while((line = entrada.nextLine()) != null){
+	                System.out.println(line);
+	            }
+			}catch (Exception e){
+	        	System.out.println("");
+	        }
+	    }    
 	}
 
 }
