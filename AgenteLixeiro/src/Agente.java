@@ -1,12 +1,12 @@
 public class Agente extends Ambiente {
 
-    @Override
-    public void ambience(){
-        System.out.println("Agente");
+    private Lixo seco;
+    private Lixo organico;
+    private boolean isFull;
+
+    public Agente(String agente){
+        setObjectType(agente);
     }
 
-    @Override
-    public void sd(int a){
-        System.out.println("teseet");
-    }
+
 }

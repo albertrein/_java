@@ -1,12 +1,40 @@
 import java.util.Random;
 
 public abstract class Ambiente {
-    public abstract void ambience();
+    private String objectType;
 
-    public abstract void sd(int val);
+    public String getObjectType() {
+        return objectType;
+    }
+
+    public void setObjectType(String objectType) {
+        this.objectType = objectType;
+    }
 
     @Override
     public String toString(){
-        return " - ";
+        return objectType;
+    }
+
+
+
+    private Lixo seco;
+    private Lixo organico;
+    private boolean isFull;
+
+    public Lixo getSeco() {
+        return seco;
+    }
+
+    public void setSeco(Lixo seco) {
+        this.seco = seco;
+    }
+
+    public Lixo getOrganico() {
+        return organico;
+    }
+
+    public void setOrganico(Lixo organico) {
+        this.organico = organico;
     }
 }

@@ -1,37 +1,42 @@
+import java.io.IOException;
 import java.util.*;
 
 public class Main {
+    //Atribs
     private static final int tamanhoMatriz = 8;
-
-    public void geraLixos(Ambiente[][] matriz){
-        do{
-            int x = randomCoordenada(), y = randomCoordenada();
-            if(matriz[x][y] != null)
-                continue;
-
-            matriz[x][y] = new Lixo("O");
-        }while (true);
-    }
+    private static Ambiente[][] ambiente;
 
 
-    public static void geraAmbiente(Ambiente[][] novaMatrizAmbiente){
-        novaMatrizAmbiente[1][6] = new Lixeira("LS ");
-        novaMatrizAmbiente[6][1] = new Lixeira("LO ");
-        geraLixos(novaMatrizAmbiente);
-    }
-
+    //methods
     public static int randomCoordenada(){
         Random rand = new Random();
         return rand.nextInt(tamanhoMatriz-1);
     }
 
-    public static void main(String[] args) {
-        Ambiente[][] ambiente = new Ambiente[8][8];
-        geraAmbiente(ambiente);
+    public static void geradorAmbiente(Ambiente novoAmbiente){
+        int x, y;
+        do{
+            x = randomCoordenada();
+            y = randomCoordenada();
+            if(ambiente[x][y] != null)
+                continue;
 
+            ambiente[x][y] = novoAmbiente;
+            break;
+        }while (true);
+    }
 
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
+    public static void geradorAmbiente(Ambiente novoAmbiente, int linha, int coluna){
+        if(linha >= tamanhoMatriz || coluna >= tamanhoMatriz){
+            System.out.println("Err. Não foi possível criar alocação");
+            return;
+        }
+        ambiente[linha][coluna] = novoAmbiente;
+    }
+
+    public static void imprimeAmbiente(){
+        for (int i = 0; i < tamanhoMatriz; i++) {
+            for (int j = 0; j < tamanhoMatriz; j++) {
                 if(ambiente[i][j] == null)
                     System.out.print(" - ");
                 else
@@ -41,10 +46,18 @@ public class Main {
             }
             System.out.println();
         }
+    }
 
+    public static void main(String[] args) {
+        ambiente = new Ambiente[tamanhoMatriz][tamanhoMatriz];
 
-        System.out.println("---------------");
-       // ambiente[4][4].sd(15);
+        geradorAmbiente(new Lixeira("Ls "), 1, 6);
+        geradorAmbiente(new Lixeira("Lo "), 6, 1);
+        geradorAmbiente(new Agente(" A "));
+        geradorAmbiente(new Lixo(" O "));
+        geradorAmbiente(new Lixo(" S "));
+
+        new AgentHandler(ambiente).start();
 
     }
 }
