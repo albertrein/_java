@@ -39,12 +39,18 @@ public class Main {
             }
         }
 
+        for(i = 0; i < solicitacao.length; i++){
+            for(j = 0; j < alocacao.length; j++){
+                if(alocacao[j] >= solicitacao[i]){
+                    alocacao[j] -= solicitacao[i];
+                    break;
+                }
+            }
+        }
+
         for (int i = 0; i < list1.length; i++) {
             System.out.println(">>"+list1[i]);
         }
-
-
-
 
     }
 }
